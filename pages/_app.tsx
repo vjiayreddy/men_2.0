@@ -7,6 +7,7 @@ import createEmotionCache from "../src/config/emotions";
 import { CacheProvider } from "@emotion/react";
 import theme from "../src/config/theme";
 import "../styles/globals.scss";
+import AppLayoutComponent from "../src/components/Layouts/AppLayout/AppLayoutIndex";
 
 const clientSideEmotionCache = createEmotionCache();
 
@@ -21,7 +22,9 @@ function MyApp(props) {
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <ApolloProvider client={apolloClient}>
-          <Component {...pageProps} />
+          <AppLayoutComponent>
+            <Component {...pageProps} />
+          </AppLayoutComponent>
         </ApolloProvider>
       </ThemeProvider>
     </CacheProvider>
