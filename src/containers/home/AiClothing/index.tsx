@@ -40,7 +40,7 @@ const AiClothingContainer = () => {
                 Discover your style and uncover your looks. Start now.
               </StyledCaptionTypography>
             </Box>
-            <Box sx={{ paddingTop: "10px", width: "80%" }}>
+            <Box sx={{ paddingTop: "10px", width: "75%" }}>
               <Grid
                 container
                 alignItems="center"
