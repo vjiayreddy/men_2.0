@@ -1,5 +1,4 @@
 export enum FONTS {
-  PRIMARY = "lora",
-  SECONDARY = "Raleway",
-  DEFAULT = "Lato",
+  PRIMARY = "Nunito Sans",
+  SECONDARY = "Montserrat",
 }

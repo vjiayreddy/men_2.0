@@ -8,13 +8,17 @@ declare module "@mui/material/styles" {
     COLOR_2?: string;
     COLOR_3?: string;
     COLOR_4?: string;
+    COLOR_5?: string;
     COLOR_7?: string;
+    COLOR_8?: string;
   }
   interface PaletteOptions {
     COLOR_2?: string;
     COLOR_3?: string;
     COLOR_4?: string;
+    COLOR_5?: string;
     COLOR_7?: string;
+    COLOR_8?: string;
   }
   interface Theme {
     a?: {
@@ -35,6 +39,10 @@ const theme = createTheme({
   spacing: 2,
   typography: {
     fontFamily: ["Nunito Sans", "Montserrat"].join(","),
+    h1: {
+      fontSize: 115,
+      fontFamily: FONTS.SECONDARY,
+    },
     h3: {
       fontFamily: "Nunito Sans",
       fontSize: 48,
@@ -45,6 +53,13 @@ const theme = createTheme({
       fontFamily: "Nunito Sans",
       fontSize: 32,
     },
+    body1: {
+      fontFamily: "Nunito Sans",
+      fontSize: 14,
+      fontWeight: 200,
+      fontStyle: "normal",
+      lineHeight: "19px",
+    },
     subtitle2: {
       fontFamily: "Nunito Sans",
       fontSize: 16,
@@ -52,19 +67,6 @@ const theme = createTheme({
       fontWeight: 400,
       fontStyle: "normal",
     },
-    body1: {
-      fontFamily: FONTS.SECONDARY,
-      fontStyle: "normal",
-      fontSize: "1.2rem",
-    },
-    body2: {
-      [muiTheme.breakpoints.only("xs")]: {
-        fontFamily: FONTS.DEFAULT,
-        lineHeight: 1.6,
-        fontSize: "1rem",
-      },
-    },
-
     caption: {
       fontFamily: "Nunito Sans",
       fontSize: 14,
@@ -86,7 +88,9 @@ const theme = createTheme({
     COLOR_2: appColors.COLOR_2,
     COLOR_3: appColors.COLOR_3,
     COLOR_4: appColors.COLOR_4,
+    COLOR_5:appColors.COLOR_5,
     COLOR_7: appColors.COLOR_7,
+    COLOR_8: appColors.COLOR_8,
   },
   components: {
     MuiAppBar: {
@@ -110,13 +114,12 @@ const theme = createTheme({
         {
           props: { variant: "contained" },
           style: {
-            height: 30,
-            fontSize: "0.8rem",
-            width: 130,
-            fontFamily: FONTS.SECONDARY,
-            [muiTheme.breakpoints.only("xs")]: {
-              height: 35,
-            },
+            height: 40,
+            fontSize: 16,
+            minWidth: 130,
+            fontFamily: FONTS.PRIMARY,
+            textTransform: "none",
+            borderRadius: 0,
           },
         },
       ],

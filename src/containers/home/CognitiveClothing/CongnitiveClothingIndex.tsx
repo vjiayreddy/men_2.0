@@ -73,10 +73,7 @@ const CongnitiveClothingContainer = () => {
               />
             </Box>
             <Box sx={{ paddingTop: "33px" }}>
-              <StepComponent
-                step="STEP-2"
-                lable="Order."
-              />
+              <StepComponent step="STEP-2" lable="Order." />
             </Box>
           </StyledContentWrapper>
         </Grid>
