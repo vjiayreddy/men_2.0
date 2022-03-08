@@ -12,8 +12,8 @@ export const StyledBoxWithGradent = styled(Box)(({ theme }) => ({
 
 export const StyledVerticalTypographyWrapper = styled(Box)(({ theme }) => ({
   position: "absolute",
-  bottom:30,
-  right:30
+  bottom: 30,
+  right: 30,
 }));
 
 export const StyledVerticalTypography = styled(Typography)(() => ({

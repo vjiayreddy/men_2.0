@@ -7,10 +7,14 @@ declare module "@mui/material/styles" {
   interface Palette {
     COLOR_2?: string;
     COLOR_3?: string;
+    COLOR_4?: string;
+    COLOR_7?: string;
   }
   interface PaletteOptions {
     COLOR_2?: string;
     COLOR_3?: string;
+    COLOR_4?: string;
+    COLOR_7?: string;
   }
   interface Theme {
     a?: {
@@ -33,9 +37,13 @@ const theme = createTheme({
     fontFamily: ["Nunito Sans", "Montserrat"].join(","),
     h3: {
       fontFamily: "Nunito Sans",
-      fontSize: 50,
+      fontSize: 48,
       fontWeight: 200,
       fontStyle: "normal",
+    },
+    h4: {
+      fontFamily: "Nunito Sans",
+      fontSize: 32,
     },
     subtitle2: {
       fontFamily: "Nunito Sans",
@@ -77,6 +85,8 @@ const theme = createTheme({
     },
     COLOR_2: appColors.COLOR_2,
     COLOR_3: appColors.COLOR_3,
+    COLOR_4: appColors.COLOR_4,
+    COLOR_7: appColors.COLOR_7,
   },
   components: {
     MuiAppBar: {
