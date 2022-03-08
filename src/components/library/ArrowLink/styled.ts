@@ -9,6 +9,7 @@ export const StyledArrowLinkWrapper = styled(Box)(({ theme }) => ({
 
 export const StyledLabelLink = styled(Typography)(({ theme }) => ({
   textTransform: "uppercase",
+  fontWeight:300,
   ":hover": {
     textDecoration: "underline",
     cursor: "pointer",

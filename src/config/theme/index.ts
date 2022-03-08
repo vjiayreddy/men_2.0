@@ -11,6 +11,7 @@ declare module "@mui/material/styles" {
     COLOR_5?: string;
     COLOR_7?: string;
     COLOR_8?: string;
+    COLOR_9?: string;
   }
   interface PaletteOptions {
     COLOR_2?: string;
@@ -19,6 +20,7 @@ declare module "@mui/material/styles" {
     COLOR_5?: string;
     COLOR_7?: string;
     COLOR_8?: string;
+    COLOR_9?: string;
   }
   interface Theme {
     a?: {
@@ -88,9 +90,10 @@ const theme = createTheme({
     COLOR_2: appColors.COLOR_2,
     COLOR_3: appColors.COLOR_3,
     COLOR_4: appColors.COLOR_4,
-    COLOR_5:appColors.COLOR_5,
+    COLOR_5: appColors.COLOR_5,
     COLOR_7: appColors.COLOR_7,
     COLOR_8: appColors.COLOR_8,
+    COLOR_9: appColors.COLOR_9,
   },
   components: {
     MuiAppBar: {

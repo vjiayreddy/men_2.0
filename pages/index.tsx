@@ -8,6 +8,7 @@ import InfoContentContainer from "../src/containers/home/InfoContent/InfoContent
 import CongnitiveClothingContainer from "../src/containers/home/CognitiveClothing/CongnitiveClothingIndex";
 import StyleCategoriesContainer from "../src/containers/home/StyleCategories/StyleCategories";
 import HandcraftedContaner from "../src/containers/home/Handcrafted/HandcraftedIndex";
+import CraftedStylistContainer from "../src/containers/home/CraftedPersonalised/CraftedStylistIndex";
 
 const HomePage: NextPage = () => {
   return (
@@ -24,6 +25,9 @@ const HomePage: NextPage = () => {
       </Box>
       <Box>
         <HandcraftedContaner />
+      </Box>
+      <Box sx={{ padding: "75px 0px" }}>
+        <CraftedStylistContainer />
       </Box>
     </Fragment>
   );
