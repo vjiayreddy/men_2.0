@@ -9,6 +9,7 @@ interface arrowLinkProps {
   href: string;
   icon?: React.ReactNode;
   labelSx?: SxProps;
+  onClick?: () => void;
 }
 
 const ArrowLinkComponent: React.FC<arrowLinkProps> = ({
@@ -16,11 +17,12 @@ const ArrowLinkComponent: React.FC<arrowLinkProps> = ({
   href,
   icon,
   labelSx,
+  onClick,
   ...props
 }) => {
   return (
     <Link {...props} href={href}>
-      <StyledArrowLinkWrapper>
+      <StyledArrowLinkWrapper onClick={onClick}>
         <Box>
           <StyledLabelLink sx={labelSx}>{label}</StyledLabelLink>
         </Box>

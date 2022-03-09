@@ -2,6 +2,10 @@ import React from "react";
 import Grid from "@mui/material/Grid";
 import Grow from "@mui/material/Grow";
 import Box from "@mui/material/Box";
+import Dialog from "@mui/material/Dialog";
+import DialogContent from "@mui/material/DialogContent";
+import DialogTitle from "@mui/material/DialogTitle";
+import DialogContentText from "@mui/material/DialogContentText";
 
 import {
   StyledBoxWithGradent,
@@ -19,8 +23,10 @@ import {
 
 import ContainerWrapperComponent from "../../../components/library/ContainerWrapper/ContainerWrapperIndex";
 import ArrowLinkComponent from "../../../components/library/ArrowLink/ArrowLinkIndex";
+import AiFashionProfilerModule from "../../../modules/AiFashionProfiler/AiFashionProfiler";
 
 const AiClothingContainer = () => {
+  const [open, setOpen] = React.useState<boolean>(false);
   return (
     <ContainerWrapperComponent>
       <StyledBoxWithGradent>
@@ -47,7 +53,13 @@ const AiClothingContainer = () => {
                 justifyContent="space-between"
               >
                 <Grid item>
-                  <ArrowLinkComponent label="Business leaders" href="/" />
+                  <ArrowLinkComponent
+                    onClick={() => {
+                      setOpen(true);
+                    }}
+                    label="Business leaders"
+                    href="/"
+                  />
                 </Grid>
                 <Grid item>
                   <ArrowLinkComponent label="Executives" href="/" />
@@ -89,6 +101,17 @@ const AiClothingContainer = () => {
           </StyledVerticalTypography>
         </StyledVerticalTypographyWrapper>
       </StyledBoxWithGradent>
+      <Dialog
+        maxWidth="lg"
+        aria-labelledby="alert-dialog-title"
+        aria-describedby="alert-dialog-description"
+        open={open}
+        onClose={() => setOpen(false)}
+      >
+        <DialogContent>
+          <AiFashionProfilerModule />
+        </DialogContent>
+      </Dialog>
     </ContainerWrapperComponent>
   );
 };
