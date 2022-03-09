@@ -13,7 +13,10 @@ import CraftedStylistContainer from "../src/containers/home/CraftedPersonalised/
 const HomePage: NextPage = () => {
   return (
     <Fragment>
-      <AiClothingContainer />
+      <Box sx={{ paddingTop: "30px" }}>
+        <AiClothingContainer />
+      </Box>
+
       <Box sx={{ paddingTop: "150px" }}>
         <InfoContentContainer />
       </Box>
