@@ -2,10 +2,6 @@ import React from "react";
 import Grid from "@mui/material/Grid";
 import Grow from "@mui/material/Grow";
 import Box from "@mui/material/Box";
-import Dialog from "@mui/material/Dialog";
-import DialogContent from "@mui/material/DialogContent";
-import DialogTitle from "@mui/material/DialogTitle";
-import DialogContentText from "@mui/material/DialogContentText";
 
 import {
   StyledBoxWithGradent,
@@ -19,11 +15,13 @@ import {
   StyledCaptionTypography,
   StyledVerticalTypography,
   StyledVerticalTypographyWrapper,
+  StyledAiProfileDialog,
+  StyledAiProfileDialogContainer,
 } from "./styled";
 
 import ContainerWrapperComponent from "../../../components/library/ContainerWrapper/ContainerWrapperIndex";
 import ArrowLinkComponent from "../../../components/library/ArrowLink/ArrowLinkIndex";
-import AiFashionProfilerModule from "../../../modules/AiFashionProfiler/AiFashionProfiler";
+import AiFashionProfilerModule from "../../../modules/AiFashionProfiler/AiFashionProfilerIndex";
 
 const AiClothingContainer = () => {
   const [open, setOpen] = React.useState<boolean>(false);
@@ -101,17 +99,22 @@ const AiClothingContainer = () => {
           </StyledVerticalTypography>
         </StyledVerticalTypographyWrapper>
       </StyledBoxWithGradent>
-      <Dialog
-        maxWidth="lg"
+      <StyledAiProfileDialog
+        fullWidth
+        maxWidth={false}
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
         open={open}
         onClose={() => setOpen(false)}
       >
-        <DialogContent>
-          <AiFashionProfilerModule />
-        </DialogContent>
-      </Dialog>
+        <StyledAiProfileDialogContainer>
+          <AiFashionProfilerModule
+            onClose={() => {
+              setOpen(false);
+            }}
+          />
+        </StyledAiProfileDialogContainer>
+      </StyledAiProfileDialog>
     </ContainerWrapperComponent>
   );
 };

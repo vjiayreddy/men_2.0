@@ -11,4 +11,8 @@ export enum appColors {
   COLOR_7 = "#B6A999",
   COLOR_8 = "#FAEDDA",
   COLOR_9 = "#E4DACD",
+  COLOR_10 = "#f8f7f7",
+  COLOR_11 = "#ABABAB",
+  COLOR_12 = "#636363",
+  COLOR_13 = "#878787",
 }

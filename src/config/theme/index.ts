@@ -1,4 +1,3 @@
-import { CSSProperties } from "@emotion/serialize";
 import { createTheme, responsiveFontSizes } from "@mui/material";
 import { appColors } from "./colors";
 import { FONTS } from "./fonts";
@@ -12,6 +11,10 @@ declare module "@mui/material/styles" {
     COLOR_7?: string;
     COLOR_8?: string;
     COLOR_9?: string;
+    COLOR_10?: string;
+    COLOR_11?: string;
+    COLOR_12?: string;
+    COLOR_13?: string;
   }
   interface PaletteOptions {
     COLOR_2?: string;
@@ -21,6 +24,10 @@ declare module "@mui/material/styles" {
     COLOR_7?: string;
     COLOR_8?: string;
     COLOR_9?: string;
+    COLOR_10?: string;
+    COLOR_11?: string;
+    COLOR_12?: string;
+    COLOR_13?: string;
   }
   interface Theme {
     a?: {
@@ -94,6 +101,10 @@ const theme = createTheme({
     COLOR_7: appColors.COLOR_7,
     COLOR_8: appColors.COLOR_8,
     COLOR_9: appColors.COLOR_9,
+    COLOR_10: appColors.COLOR_10,
+    COLOR_11: appColors.COLOR_11,
+    COLOR_12: appColors.COLOR_12,
+    COLOR_13: appColors.COLOR_13,
   },
   components: {
     MuiAppBar: {
@@ -127,13 +138,36 @@ const theme = createTheme({
         },
       ],
     },
-    MuiDialog:{
-      styleOverrides:{
-        paper:{
-          borderRadius:0
-        }
-      }
-    }
+    MuiDialog: {
+      styleOverrides: {
+        paper: {
+          borderRadius: 0,
+        },
+      },
+    },
+    MuiInputBase: {
+      defaultProps: {
+        fullWidth: true,
+        size: "small",
+      },
+      styleOverrides: {
+        root: {
+          border: `1px solid #282828`,
+          height: 40,
+          borderRadius: 5,
+          padding: 10,
+        },
+      },
+    },
+    MuiFormLabel: {
+      styleOverrides: {
+        root: {
+          fontFamily: "Nunito Sans",
+          fontSize: 14,
+          fontWeight: 200,
+        },
+      },
+    },
   },
 });
 

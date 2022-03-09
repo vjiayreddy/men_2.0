@@ -1,5 +1,7 @@
 import { styled } from "@mui/material";
 import Box from "@mui/material/Box";
+import Dialog from "@mui/material/Dialog";
+import DialogContent from "@mui/material/DialogContent";
 import Typography from "@mui/material/Typography";
 
 export const StyledBoxWithGradent = styled(Box)(({ theme }) => ({
@@ -66,3 +68,16 @@ export const StyledSpanTitle = styled("span")(({ theme }) => ({
 export const StyledCaptionTypography = styled(Typography)(({ theme }) => ({
   letterSpacing: "3px",
 }));
+
+export const StyledAiProfileDialog = styled(Dialog)(({ theme }) => ({
+  "& .MuiDialog-paper": {
+    backgroundColor: theme.palette.COLOR_10,
+    padding: 0,
+  },
+}));
+export const StyledAiProfileDialogContainer = styled(DialogContent)(
+  ({ theme }) => ({
+    backgroundColor: theme.palette.COLOR_10,
+    padding: 0,
+  })
+);
