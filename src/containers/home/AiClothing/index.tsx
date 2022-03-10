@@ -56,14 +56,13 @@ const AiClothingContainer = () => {
                       setOpen(true);
                     }}
                     label="Business leaders"
-                    href="/"
                   />
                 </Grid>
                 <Grid item>
-                  <ArrowLinkComponent label="Executives" href="/" />
+                  <ArrowLinkComponent label="Executives" />
                 </Grid>
                 <Grid item>
-                  <ArrowLinkComponent label="Grooms" href="/" />
+                  <ArrowLinkComponent label="Grooms" />
                 </Grid>
               </Grid>
             </Box>

@@ -6,7 +6,6 @@ import { SxProps } from "@mui/system";
 
 interface arrowLinkProps {
   label: string;
-  href: string;
   icon?: React.ReactNode;
   labelSx?: SxProps;
   onClick?: () => void;
@@ -14,14 +13,12 @@ interface arrowLinkProps {
 
 const ArrowLinkComponent: React.FC<arrowLinkProps> = ({
   label,
-  href,
   icon,
   labelSx,
   onClick,
-  ...props
 }) => {
   return (
-    <Link {...props} href={href}>
+    <Box>
       <StyledArrowLinkWrapper onClick={onClick}>
         <Box>
           <StyledLabelLink sx={labelSx}>{label}</StyledLabelLink>
@@ -34,7 +31,7 @@ const ArrowLinkComponent: React.FC<arrowLinkProps> = ({
           )}
         </Box>
       </StyledArrowLinkWrapper>
-    </Link>
+    </Box>
   );
 };
 

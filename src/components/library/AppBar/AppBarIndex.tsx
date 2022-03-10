@@ -48,7 +48,7 @@ const AppBarComponent = () => {
             </StyledActionButton>
             <StyledActionButton>
               <Box>
-                <Link href="/dashboard">
+                <Link href="/dashboard" passHref={true}>
                   <StyledAnchorLink>Dashboard</StyledAnchorLink>
                 </Link>
               </Box>
