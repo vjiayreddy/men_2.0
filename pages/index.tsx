@@ -1,6 +1,5 @@
 import { Fragment } from "react";
 import { NextPage } from "next";
-import Box from "@mui/material/Box";
 
 // Components
 import AiClothingContainer from "../src/containers/home/AiClothing";
@@ -9,29 +8,18 @@ import CongnitiveClothingContainer from "../src/containers/home/CognitiveClothin
 import StyleCategoriesContainer from "../src/containers/home/StyleCategories/StyleCategories";
 import HandcraftedContaner from "../src/containers/home/Handcrafted/HandcraftedIndex";
 import CraftedStylistContainer from "../src/containers/home/CraftedPersonalised/CraftedStylistIndex";
+import TestimonialSliderComponent from "../src/components/library/TestimonialSlider";
 
 const HomePage: NextPage = () => {
   return (
     <Fragment>
-      <Box sx={{ paddingTop: "30px" }}>
-        <AiClothingContainer />
-      </Box>
-
-      <Box sx={{ paddingTop: "150px" }}>
-        <InfoContentContainer />
-      </Box>
-      <Box sx={{ paddingTop: "20px" }}>
-        <CongnitiveClothingContainer />
-      </Box>
-      <Box sx={{ paddingTop: "175px", paddingBottom: "75px" }}>
-        <StyleCategoriesContainer />
-      </Box>
-      <Box>
-        <HandcraftedContaner />
-      </Box>
-      <Box sx={{ padding: "75px 0px" }}>
-        <CraftedStylistContainer />
-      </Box>
+      <AiClothingContainer />
+      <InfoContentContainer />
+      <CongnitiveClothingContainer />
+      <StyleCategoriesContainer />
+      <HandcraftedContaner />
+      <CraftedStylistContainer />
+      <TestimonialSliderComponent/>
     </Fragment>
   );
 };

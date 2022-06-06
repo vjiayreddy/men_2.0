@@ -27,7 +27,7 @@ const ArrowLinkComponent: React.FC<arrowLinkProps> = ({
           {icon ? (
             icon
           ) : (
-            <img alt="asset-arrow-icon" src="./assets/arrow_icon.svg" />
+            <img alt="asset-arrow-icon" src="/assets/arrow_icon.svg" />
           )}
         </Box>
       </StyledArrowLinkWrapper>

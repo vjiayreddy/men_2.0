@@ -2,8 +2,10 @@ import React from "react";
 import Grid from "@mui/material/Grid";
 import Grow from "@mui/material/Grow";
 import Box from "@mui/material/Box";
+import Hidden from "@mui/material/Hidden";
 
 import {
+  StyledBoxWrapper,
   StyledImageBox,
   StyledMenCongImg,
   StyledVectorBadgeImg,
@@ -13,19 +15,40 @@ import {
   StyledCaption,
 } from "./styled";
 
-import ContainerWrapperComponent from "../../../components/library/ContainerWrapper/ContainerWrapperIndex";
 import StepComponent from "./Step";
+import Image from "next/dist/client/image";
 
 const CongnitiveClothingContainer = () => {
   return (
-    <ContainerWrapperComponent>
+    <StyledBoxWrapper>
       <Grid container>
-        <Grid container item xs={6} alignItems="center" justifyContent="center">
+        <Grid
+          container
+          item
+          xs={12}
+          md={6}
+          lg={6}
+          xl={6}
+          alignItems="center"
+          justifyContent="center"
+        >
           <StyledImageBox>
-            <StyledMenCongImg
-              alt="asset-cognitive-ai-engine"
-              src="./assets/cognitive.svg"
-            ></StyledMenCongImg>
+            <Hidden only={["xs"]}>
+              <StyledMenCongImg
+                alt="asset-cognitive-ai-engine"
+                src="/assets/cognitive.svg"
+              ></StyledMenCongImg>
+            </Hidden>
+            <Hidden only={["md", "lg", "xl"]}>
+              <Image
+                alt="asset-ai-cognitive-mobile"
+                src="/assets/mobile-cognitive.svg"
+                layout="intrinsic"
+                quality={100}
+                width={"342.12px"}
+                height={308.93}
+              ></Image>
+            </Hidden>
             <Grow
               in={true}
               style={{ transformOrigin: "0 0 0" }}
@@ -33,7 +56,7 @@ const CongnitiveClothingContainer = () => {
             >
               <StyledVectorBadgeImg
                 alt="asset-badgeIcon"
-                src="./assets/assets_badge.svg"
+                src="/assets/assets_badge.svg"
               ></StyledVectorBadgeImg>
             </Grow>
             <Grow
@@ -43,42 +66,54 @@ const CongnitiveClothingContainer = () => {
             >
               <StyledVectorMenuImg
                 alt="asset-menu-icon"
-                src="./assets/menu_lite_gray.svg"
+                src="/assets/menu_lite_gray.svg"
               ></StyledVectorMenuImg>
             </Grow>
           </StyledImageBox>
         </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={12} md={6} lg={6} xl={6}>
           <StyledContentWrapper>
-            <Box>
-              <StyledMainHeading variant="h3">
-                Cognitive Clothing AI Engine
-              </StyledMainHeading>
-            </Box>
-            <Box>
-              <StyledCaption variant="caption">
-                Say goodbye to wondering what clothes you should buy. Our AI
-                powered Cognitive Clothing Engine will help you discover your
-                style and tell you exactly what looks suit you best. 3 steps -
-                many looks. As easy as that.
-              </StyledCaption>
-            </Box>
-            <Box sx={{ paddingTop: "33px" }}>
-              <StepComponent step="STEP-1" lable="Describe your lifestyle." />
-            </Box>
+            <Hidden only={["xs"]}>
+              <Box>
+                <StyledMainHeading variant="h3">
+                  The menswear revolution is here
+                </StyledMainHeading>
+              </Box>
+              <Box>
+                <StyledCaption variant="caption">
+                  If you’ve ever walked into a store, and seen the hundreds of
+                  options on display only to leave with nothing purchased,
+                  you’re not alone. With Men 2.0, you will never again spend an
+                  hour in the joyless trial rooms of main street stores.
+                </StyledCaption>
+              </Box>
+            </Hidden>
             <Box sx={{ paddingTop: "33px" }}>
               <StepComponent
-                step="STEP-2"
-                lable="Discover your style & your best looks."
+                step="Driven by your lifestyle"
+                lable="Our AI tool draws upon your life to find the right apparel
+"
               />
             </Box>
             <Box sx={{ paddingTop: "33px" }}>
-              <StepComponent step="STEP-2" lable="Order." />
+              <Hidden only={["xs"]}>
+                <StepComponent
+                  step="Simple visual cues"
+                  lable="Discover your style & your best looks"
+                />
+              </Hidden>
+            </Box>
+            <Box sx={{ paddingTop: "33px" }}>
+              <StepComponent
+                step="Made for a perfect fit"
+                lable="Your look is handmade with the best fabrics by 
+                    master craftsmen"
+              />
             </Box>
           </StyledContentWrapper>
         </Grid>
       </Grid>
-    </ContainerWrapperComponent>
+    </StyledBoxWrapper>
   );
 };
 

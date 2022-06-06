@@ -23,7 +23,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-, "pages/_document.js"  ],
+, "pages/_document.js", "pages/api/checkout_sessions/index.js", "pages/api/webhook/index.js", "src/containers/checkout/index.tsx"  ],
   "exclude": [
     "node_modules"
   ]

@@ -20,6 +20,9 @@ const StyledMainLabel = styled(Typography)(({ theme }) => ({
   color: theme.palette.primary.main,
   fontSize: `24px !important`,
   fontWeight: 200,
+  [theme.breakpoints.only('xs')]:{
+    fontSize:21
+  }
 }));
 
 const StepComponent: React.FC<stepComponentProps> = ({ step, lable }) => {

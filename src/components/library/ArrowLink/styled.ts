@@ -14,4 +14,9 @@ export const StyledLabelLink = styled(Typography)(({ theme }) => ({
     textDecoration: "underline",
     cursor: "pointer",
   },
+  [theme.breakpoints.down("sm")]:{
+    fontSize:12,
+    color:theme.palette.primary.main,
+    fontWeight:500
+  }
 }));

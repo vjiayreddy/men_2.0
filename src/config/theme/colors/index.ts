@@ -15,4 +15,29 @@ export enum appColors {
   COLOR_11 = "#ABABAB",
   COLOR_12 = "#636363",
   COLOR_13 = "#878787",
+  COLOR_14 = "#282828",
+  COLOR_15 = "#202142",
+  COLOR_16 = "#252525",
+  COLOR_17 = "#FFFFFF",
+  COLOR_18 = "#636363",
+}
+
+export interface COLORS {
+  COLOR_1?: string;
+  COLOR_2?: string;
+  COLOR_3?: string;
+  COLOR_4?: string;
+  COLOR_5?: string;
+  COLOR_7?: string;
+  COLOR_8?: string;
+  COLOR_9?: string;
+  COLOR_10?: string;
+  COLOR_11?: string;
+  COLOR_12?: string;
+  COLOR_13?: string;
+  COLOR_14?: string;
+  COLOR_15?: string;
+  COLOR_16?: string;
+  COLOR_17?: string;
+  COLOR_18?: string;
 }

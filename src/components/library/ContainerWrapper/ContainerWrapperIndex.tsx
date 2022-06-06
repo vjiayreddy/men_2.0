@@ -14,7 +14,11 @@ const ContainerWrapperComponent: React.FC<containerWrapperProps> = ({
   ...props
 }) => {
   return (
-    <Container {...props} maxWidth={maxWidth ? maxWidth : "lg"}>
+    <Container
+      sx={{ padding: 0 }}
+      {...props}
+      maxWidth={maxWidth ? maxWidth : "lg"}
+    >
       {children}
     </Container>
   );

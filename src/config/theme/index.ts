@@ -1,56 +1,27 @@
+import { minHeight } from "@mui/system";
 import { createTheme, responsiveFontSizes } from "@mui/material";
-import { appColors } from "./colors";
+import { appColors, COLORS } from "./colors";
+import { CUSTOM_CLASSES } from "./customClasses";
 import { FONTS } from "./fonts";
 
 declare module "@mui/material/styles" {
-  interface Palette {
-    COLOR_2?: string;
-    COLOR_3?: string;
-    COLOR_4?: string;
-    COLOR_5?: string;
-    COLOR_7?: string;
-    COLOR_8?: string;
-    COLOR_9?: string;
-    COLOR_10?: string;
-    COLOR_11?: string;
-    COLOR_12?: string;
-    COLOR_13?: string;
-  }
-  interface PaletteOptions {
-    COLOR_2?: string;
-    COLOR_3?: string;
-    COLOR_4?: string;
-    COLOR_5?: string;
-    COLOR_7?: string;
-    COLOR_8?: string;
-    COLOR_9?: string;
-    COLOR_10?: string;
-    COLOR_11?: string;
-    COLOR_12?: string;
-    COLOR_13?: string;
-  }
-  interface Theme {
-    a?: {
-      fontFamily?: string;
-      fontSize?: string | number;
-    };
-  }
-  interface ThemeOptions {
-    a?: {
-      fontFamily?: string;
-      fontSize?: string | number;
-    };
-  }
+  interface Palette extends COLORS {}
+  interface PaletteOptions extends COLORS {}
+  interface Theme extends CUSTOM_CLASSES {}
+  interface ThemeOptions extends CUSTOM_CLASSES {}
 }
 const muiTheme = createTheme();
 
 const theme = createTheme({
   spacing: 2,
   typography: {
-    fontFamily: ["Nunito Sans", "Montserrat"].join(","),
+    fontFamily: ["Nunito Sans", "Montserrat", "Poppins"].join(","),
     h1: {
       fontSize: 115,
       fontFamily: FONTS.SECONDARY,
+      [muiTheme.breakpoints.only("xs")]: {
+        fontSize: 40,
+      },
     },
     h3: {
       fontFamily: "Nunito Sans",
@@ -84,8 +55,62 @@ const theme = createTheme({
     },
   },
   a: {
-    fontFamily: "Nunito Sans",
+    fontFamily: FONTS.PRIMARY,
     fontSize: 14,
+  },
+  formGreetings: {
+    fontFamily: FONTS.EXTRA,
+    fontSize: 25,
+    lineHeight: "37.5px",
+  },
+  formTitle: {
+    fontFamily: FONTS.EXTRA,
+    fontSize: 31,
+    fontWeight: 600,
+    lineHeight: "46.5px",
+  },
+  formSubTitle: {
+    fontSize: 16,
+    fontWeight: 400,
+    fontStyle: "normal",
+    lineHeight: "24px",
+  },
+  formLinkButton: {
+    fontFamily: FONTS.PRIMARY,
+    fontSize: 14,
+    fontWeight: 400,
+    lineHeight: "19px",
+  },
+  footerLink: {
+    fontFamily: FONTS.PRIMARY,
+    fontSize: 16,
+    fontWeight: 400,
+    height: "10px !important",
+    lineHeight: "24.55px",
+    color: muiTheme.palette.common.white,
+  },
+  footerLinkListHeader: {
+    fontFamily: FONTS.PRIMARY,
+    fontSize: 16,
+    lineHeight: "24.55px",
+    color: muiTheme.palette.common.white,
+    fontWeight: 700,
+  },
+  container: {
+    minHeight: `calc(100vh)`,
+    paddingLeft:0,
+    paddingRight:0,
+    paddingTop: "84.36px",
+    display: "flex",
+    flexDirection: "column",
+    [muiTheme.breakpoints.down("sm")]: {
+      paddingTop: "80.36px",
+    },
+  },
+  boxWrapper: {
+    height: `calc(100vh - 84.36px)`,
+    display: "flex",
+    flexDirection: "column",
   },
   palette: {
     primary: {
@@ -94,6 +119,7 @@ const theme = createTheme({
     secondary: {
       main: appColors.SECONDARY,
     },
+    COLOR_1: appColors.COLOR_1,
     COLOR_2: appColors.COLOR_2,
     COLOR_3: appColors.COLOR_3,
     COLOR_4: appColors.COLOR_4,
@@ -105,6 +131,11 @@ const theme = createTheme({
     COLOR_11: appColors.COLOR_11,
     COLOR_12: appColors.COLOR_12,
     COLOR_13: appColors.COLOR_13,
+    COLOR_14: appColors.COLOR_14,
+    COLOR_15: appColors.COLOR_15,
+    COLOR_16: appColors.COLOR_16,
+    COLOR_17: appColors.COLOR_17,
+    COLOR_18: appColors.COLOR_18,
   },
   components: {
     MuiAppBar: {
@@ -114,11 +145,13 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           backgroundColor: muiTheme.palette.common.white,
-          padding: `20px 0px`,
+          padding: `5px 0px`,
           color: muiTheme.palette.common.black,
+          borderBottom: `1px solid ${muiTheme.palette.grey[300]}`,
         },
       },
     },
+
     MuiButton: {
       defaultProps: {
         disableElevation: true,
@@ -126,14 +159,36 @@ const theme = createTheme({
       },
       variants: [
         {
-          props: { variant: "contained" },
+          props: { variant: "contained", size: "medium" },
           style: {
-            height: 40,
+            height: 54,
             fontSize: 16,
             minWidth: 130,
             fontFamily: FONTS.PRIMARY,
             textTransform: "none",
             borderRadius: 0,
+          },
+        },
+        {
+          props: { variant: "outlined", size: "small" },
+          style: {
+            height: 35,
+            fontFamily: FONTS.PRIMARY,
+            textTransform: "none",
+            borderRadius: 0,
+            fontSize: 12,
+            minWidth: 130,
+          },
+        },
+        {
+          props: { variant: "contained", size: "small" },
+          style: {
+            height: 35,
+            fontFamily: FONTS.PRIMARY,
+            textTransform: "none",
+            borderRadius: 0,
+            fontSize: 12,
+            minWidth: 130,
           },
         },
       ],
@@ -152,10 +207,12 @@ const theme = createTheme({
       },
       styleOverrides: {
         root: {
-          border: `1px solid #282828`,
           height: 40,
           borderRadius: 5,
           padding: 10,
+        },
+        sizeSmall: {
+          height: 35,
         },
       },
     },
@@ -165,6 +222,22 @@ const theme = createTheme({
           fontFamily: "Nunito Sans",
           fontSize: 14,
           fontWeight: 200,
+        },
+      },
+    },
+    MuiInputLabel: {
+      styleOverrides: {
+        root: {
+          fontFamily: FONTS.POPPINS,
+          color: muiTheme.palette.common.black,
+        },
+      },
+    },
+    MuiTab: {
+      styleOverrides: {
+        root: {
+          fontFamily: "Nunito Sans",
+          fontWeight: 400,
         },
       },
     },

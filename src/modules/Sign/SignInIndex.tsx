@@ -17,7 +17,7 @@ import { Button } from "@mui/material";
 
 const SignInModule = () => {
   return (
-    <StyledLoginBoxWrapper backgroundImage="./assets/loginBg.png">
+    <StyledLoginBoxWrapper backgroundImage="/assets/loginBg.png">
       <StyledLoginForm>
         <StyledWelcomeLabel variant="body1">Welcome !</StyledWelcomeLabel>
         <Box sx={{ marginTop: "15px" }}>

@@ -1,10 +1,18 @@
 import React from "react";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
+import Hidden from "@mui/material/Hidden";
+import { styled } from "@mui/material";
 import ContainerWrapperComponent from "../../../components/library/ContainerWrapper/ContainerWrapperIndex";
 import StyleCategoryCardComponent from "../../../components/library/cards/StyleCategory/StyleCategoryIndex";
 
-const data = [
+type cardDataType = {
+  title: string;
+  image: string;
+  content: string;
+};
+
+const data: cardDataType[] = [
   {
     title: "Business leaders",
     image: "business_leaders.svg",
@@ -12,25 +20,33 @@ const data = [
   },
   {
     title: "Executives",
-    image: "executives.svg",
+    image: "executives.png",
     content: `The corporate ladder has no idea the style you’re going to hit them with.`,
   },
   {
     title: "Grooms",
-    image: "groom.svg",
+    image: "grooming.png",
     content: `Make your big day your best dressed way with our weddingwear.`,
   },
 ];
 
+const StyledCardBox = styled(Box)(({ theme }) => ({
+  paddingTop: "150px",
+  paddingBottom: "50px",
+  [theme.breakpoints.down("sm")]: {
+    padding: `40px 30px`,
+  },
+}));
+
 const StyleCategoriesContainer = () => {
   return (
-    <ContainerWrapperComponent>
-      <Box sx={{ padding: "0px 70px" }}>
+    <StyledCardBox>
+      <Hidden only={["xs"]}>
         <Grid container justifyContent="stretch" spacing={25}>
           {data.map((_item, index) => (
             <Grid item key={index} md={4}>
               <StyleCategoryCardComponent
-                image={`./assets/${_item.image}`}
+                image={`/assets/${_item.image}`}
                 title={_item.title}
                 content={_item.content}
                 onClickbtn={() => {}}
@@ -38,8 +54,16 @@ const StyleCategoriesContainer = () => {
             </Grid>
           ))}
         </Grid>
-      </Box>
-    </ContainerWrapperComponent>
+      </Hidden>
+      <Hidden only={["md", "lg", "xl"]}>
+        <StyleCategoryCardComponent
+          image={`/assets/${data[0].image}`}
+          title={data[0].title}
+          content={data[0].content}
+          onClickbtn={() => {}}
+        />
+      </Hidden>
+    </StyledCardBox>
   );
 };
 
